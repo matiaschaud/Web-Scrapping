@@ -1,0 +1,23 @@
+{
+'bebidas': 'https://supermercado.carrefour.com.ar/bebidas.html', 
+'almacen': 'https://supermercado.carrefour.com.ar/almacen.html', 
+'desayuno-y-merienda': 'https://supermercado.carrefour.com.ar/desayuno-y-merienda.html', 
+'golosinas-y-snacks': 'https://supermercado.carrefour.com.ar/golosinas-y-snacks.html', 
+'lacteos-y-productos-frescos': 'https://supermercado.carrefour.com.ar/lacteos-y-productos-frescos.html', 
+'congelados': 'https://supermercado.carrefour.com.ar/congelados.html', 
+'carnes-y-pescados': 'https://supermercado.carrefour.com.ar/carnes-y-pescados.html', 
+'quesos-y-fiambres': 'https://supermercado.carrefour.com.ar/quesos-y-fiambres.html', 
+'frutas-y-verduras': 'https://supermercado.carrefour.com.ar/frutas-y-verduras.html', 
+'panaderia': 'https://supermercado.carrefour.com.ar/panaderia.html', 
+'limpieza': 'https://supermercado.carrefour.com.ar/limpieza.html', 
+'perfumeria': 'https://supermercado.carrefour.com.ar/perfumeria.html', 
+'mundo-bebe': 'https://supermercado.carrefour.com.ar/mundo-bebe.html', 
+'mascotas': 'https://supermercado.carrefour.com.ar/mascotas.html', 
+'hogar-y-bazar': 'https://supermercado.carrefour.com.ar/hogar-y-bazar.html'
+}
+
+'gigante': 'https://supermercado.carrefour.com.ar/gigante.html', 
+'vinos-del-mes': 'https://supermercado.carrefour.com.ar/vinos-del-mes.html', 
+'precios-corajudos': 'https://supermercado.carrefour.com.ar/precios-corajudos.html', 
+'precios-cuidados': 'https://supermercado.carrefour.com.ar/precios-cuidados.html', 
+'sin-tacc': 'https://supermercado.carrefour.com.ar/sin-tacc.html', 
