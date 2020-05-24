@@ -12,25 +12,25 @@ from datetime import datetime
 from paquetes.utils import *
 import pandas as pd
 
-# Obtenemos los distintos links a scrappear en formato de diccionario
+#--------------- Obtenemos los distintos links a scrappear en formato de diccionario-----------------------#
 # links = obtiene_links()
 
 links = {
-# 'bebidas': 'https://supermercado.carrefour.com.ar/bebidas.html', 
-# 'almacen': 'https://supermercado.carrefour.com.ar/almacen.html', 
-# 'desayuno-y-merienda': 'https://supermercado.carrefour.com.ar/desayuno-y-merienda.html', 
-# 'golosinas-y-snacks': 'https://supermercado.carrefour.com.ar/golosinas-y-snacks.html', 
-# 'lacteos-y-productos-frescos': 'https://supermercado.carrefour.com.ar/lacteos-y-productos-frescos.html', 
-# 'congelados': 'https://supermercado.carrefour.com.ar/congelados.html', 
-# 'carnes-y-pescados': 'https://supermercado.carrefour.com.ar/carnes-y-pescados.html', 
-# 'quesos-y-fiambres': 'https://supermercado.carrefour.com.ar/quesos-y-fiambres.html',
-# 'frutas-y-verduras': 'https://supermercado.carrefour.com.ar/frutas-y-verduras.html', 
-'panaderia': 'https://supermercado.carrefour.com.ar/panaderia.html'#, 
-# 'limpieza': 'https://supermercado.carrefour.com.ar/limpieza.html', 
-# 'perfumeria': 'https://supermercado.carrefour.com.ar/perfumeria.html', 
-# 'mundo-bebe': 'https://supermercado.carrefour.com.ar/mundo-bebe.html', 
-# 'mascotas': 'https://supermercado.carrefour.com.ar/mascotas.html', 
-# 'hogar-y-bazar': 'https://supermercado.carrefour.com.ar/hogar-y-bazar.html'
+'bebidas': 'https://supermercado.carrefour.com.ar/bebidas.html', 
+'almacen': 'https://supermercado.carrefour.com.ar/almacen.html', 
+'desayuno-y-merienda': 'https://supermercado.carrefour.com.ar/desayuno-y-merienda.html', 
+'golosinas-y-snacks': 'https://supermercado.carrefour.com.ar/golosinas-y-snacks.html', 
+'lacteos-y-productos-frescos': 'https://supermercado.carrefour.com.ar/lacteos-y-productos-frescos.html', 
+'congelados': 'https://supermercado.carrefour.com.ar/congelados.html', 
+'carnes-y-pescados': 'https://supermercado.carrefour.com.ar/carnes-y-pescados.html', 
+'quesos-y-fiambres': 'https://supermercado.carrefour.com.ar/quesos-y-fiambres.html',
+'frutas-y-verduras': 'https://supermercado.carrefour.com.ar/frutas-y-verduras.html', 
+'panaderia': 'https://supermercado.carrefour.com.ar/panaderia.html', 
+'limpieza': 'https://supermercado.carrefour.com.ar/limpieza.html', 
+'perfumeria': 'https://supermercado.carrefour.com.ar/perfumeria.html', 
+'mundo-bebe': 'https://supermercado.carrefour.com.ar/mundo-bebe.html', 
+'mascotas': 'https://supermercado.carrefour.com.ar/mascotas.html', 
+'hogar-y-bazar': 'https://supermercado.carrefour.com.ar/hogar-y-bazar.html'
 }
 
 
@@ -77,26 +77,26 @@ for seccion,link in links.items():
         last_height = new_height
 
     # Los botones podrían tener distinto xPath, estos son los 3 más comunes.
-    wait = WebDriverWait(browser, 5)
+    wait = WebDriverWait(browser, 20)
     try:
-        python_button_pos3 = wait.until(element_is_displayed((By.XPATH, "/html/body/div[1]/div[1]/div[1]/div[8]/div/div/div[4]/a")))
+        python_button = wait.until(element_is_displayed((By.XPATH, "/html/body/div[1]/div[1]/div[1]/div[8]/div/div/div[4]/a")))
     except:                                                                  
         try:                                                                
-            python_button_pos3 = wait.until(element_is_displayed((By.XPATH, "/html/body/div[1]/div[1]/div[1]/div[8]/div/div/div[3]/a[2]")))
+            python_button = wait.until(element_is_displayed((By.XPATH, "/html/body/div[1]/div[1]/div[1]/div[8]/div/div/div[3]/a[2]")))
         except:
             try:                                                                
-                python_button_pos3 = wait.until(element_is_displayed((By.XPATH, "/html/body/div[1]/div[1]/div[1]/div[8]/div/div/div[2]/a")))
+                python_button = wait.until(element_is_displayed((By.XPATH, "/html/body/div[1]/div[1]/div[1]/div[8]/div/div/div[2]/a")))
             except:
                 print("No coincide con ningún botón")
                 exit()
     
-    intentos = 5
+    intentos = 20
     t = 1.5
     contador = 0
         # click button "VER MÁS PRODUCTOS"
     while True:
-        if python_button_pos3.is_displayed():
-            browser.execute_script("arguments[0].click();", python_button_pos3)
+        if python_button.is_displayed():
+            browser.execute_script("arguments[0].click();", python_button)
             contador = 0
         else:
             contador += 1
